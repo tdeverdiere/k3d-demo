@@ -47,7 +47,7 @@ The main difference is that the app is not python but a node web server.
 ### Start/Stop the Cluster
 
 - Stop the cluster: `k3d cluster stop demo`
-- Try to access the stopped cluster: "kubectl get nodes`
+- Try to access the stopped cluster: `kubectl get nodes`
 - Start the cluster: `k3d cluster start demo`
 - Access restarted cluster: `kubectl get nodes`
 
