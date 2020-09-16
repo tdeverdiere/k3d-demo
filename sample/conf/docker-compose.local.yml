@@ -8,5 +8,5 @@ services:
     environment:
       LOG_LEVEL: debug
     ports:
-      - "5000:5000"
+      - "3000:3000"
     command: ["serve-develop"]

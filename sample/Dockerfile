@@ -1,13 +1,6 @@
-FROM python:3.7-slim
-
-ENV PATH="/app/bin:${PATH}" \
-    PYTHONPATH=/app/src 
-
-COPY . /app/
-
-RUN pip3 install -r /app/conf/app/requirements.txt
-
-WORKDIR /app
-
-ENTRYPOINT ["/bin/bash", "-c"]
-
+FROM node:14
+WORKDIR app
+COPY package*.json app.js ./
+RUN npm install
+EXPOSE 3000
+CMD ["node", "app.js"]
