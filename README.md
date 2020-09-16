@@ -34,10 +34,10 @@ The main difference is that the app is not python but a node web server.
 
 - Build the sample-app: `docker build sample/ -f sample/Dockerfile -t sample-app:local`
 - Load the sample-app image into the cluster: `k3d image import -c demo sample-app:local`
-- Create a new 'demo' namespace" "kubectl create namespace demo"
-- Switch to the new 'demo' namespace" "kubens demo"
-- Deploy the sample app with helm" "helm upgrade --install sample-app sample/conf/charts/sample-app --namespace demo --set app.image=sample-app:local"
-- Access the sample app frontend via ingress" "chromium --new-window http://sample.k3d.localhost:8080 &>/dev/null &"
+- Create a new 'demo' namespace: `kubectl create namespace demo`
+- Switch to the new 'demo' namespace: `kubectl config set-context --current --namespace=demo`
+- Deploy the sample app with helm: `helm upgrade --install sample-app sample/conf/charts/sample-app --namespace demo --set app.image=sample-app:local`
+- Access the sample app frontend via ingress (on chrome): `chrome --new-window http://localhost:8080`
 
 ### Grow the Cluster
 
